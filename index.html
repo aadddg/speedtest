@@ -404,7 +404,6 @@ function initUI(){
 		html,body,#loading{
 			background:#202020;
 			color:#F4F4F4;
-			color-scheme:dark;
 		}
 		h1{
 			color:#E0E0E0;
@@ -423,13 +422,13 @@ function initUI(){
 <title>LibreSpeed</title>
 </head>
 <body onload="initServers()">
-<h1>LibreSpeed</h1>
+<h1>速度测试</h1>
 <div id="loading" class="visible">
-	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
+	<p id="message"><span class="loadCircle"></span>搜索一个测速服务器...</p>
 </div>
 <div id="testWrapper" class="hidden">
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
-	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
+	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">隐私政策</a>
 	<div id="serverArea">
 		Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
 	</div>
@@ -441,20 +440,20 @@ function initUI(){
 				<div class="unit">ms</div>
 			</div>
 			<div class="testArea2">
-				<div class="testName">Jitter</div>
+				<div class="testName">延迟</div>
 				<div id="jitText" class="meterText" style="color:#AA6060"></div>
 				<div class="unit">ms</div>
 			</div>
 		</div>
 		<div class="testGroup">
 			<div class="testArea">
-				<div class="testName">Download</div>
+				<div class="testName">下载</div>
 				<canvas id="dlMeter" class="meter"></canvas>
 				<div id="dlText" class="meterText"></div>
 				<div class="unit">Mbit/s</div>
 			</div>
 			<div class="testArea">
-				<div class="testName">Upload</div>
+				<div class="testName">上传</div>
 				<canvas id="ulMeter" class="meter"></canvas>
 				<div id="ulText" class="meterText"></div>
 				<div class="unit">Mbit/s</div>
@@ -470,46 +469,45 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
-	<a href="https://github.com/librespeed/speedtest">Source code</a>
+	<a href="https://github.com/librespeed/speedtest">源代码出自:Github/librespeed</a>
 </div>
 <div id="privacyPolicy" style="display:none">
-    <h2>Privacy Policy</h2>
-    <p>This HTML5 speed test server is configured with telemetry enabled.</p>
-    <h4>What data we collect</h4>
+    <h2>隐私策略</h2>
+    <p>此 HTML5 速度测试服务器配置了启用遥测。</p>
+    <h4>我们收集哪些数据</h4>
     <p>
-        At the end of the test, the following data is collected and stored:
+        在测试结束时，将收集并存储以下数据：
         <ul>
-            <li>Test ID</li>
-            <li>Time of testing</li>
-            <li>Test results (download and upload speed, ping and jitter)</li>
-            <li>IP address</li>
-            <li>ISP information</li>
-            <li>Approximate location (inferred from IP address, not GPS)</li>
-            <li>User agent and browser locale</li>
-            <li>Test log (contains no personal information)</li>
+            <li>测试 ID</li>
+            <li>测试时间</li>
+            <li>测试结果（下载和上传速度、ping 和抖动）</li>
+            <li>IP地址</li>
+            <li>ISP信息</li>
+            <li>大致位置(根据 IP 地址推断，而不是 GPS)</li>
+            <li>用户代理和浏览器区域设置</li>
+            <li>测试日志（不包含个人信息）</li>
         </ul>
     </p>
-    <h4>How we use the data</h4>
+    <h4>我们如何使用数据</h4>
     <p>
-        Data collected through this service is used to:
+        通过此服务收集的数据用于：
         <ul>
-            <li>Allow sharing of test results (sharable image for forums, etc.)</li>
-            <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
+            <li>允许共享测试结果（论坛等的可共享图像）</li>
+            <li>改进为您提供的服务（例如，检测我们这边的问题）</li>
         </ul>
-        No personal information is disclosed to third parties.
+        不会向第三方披露任何个人信息。
     </p>
-    <h4>Your consent</h4>
+    <h4>您的同意</h4>
     <p>
-        By starting the test, you consent to the terms of this privacy policy.
+        开始测试，即表示您同意本隐私政策的条款。
     </p>
-    <h4>Data removal</h4>
+    <h4>数据删除</h4>
     <p>
-        If you want to have your information deleted, you need to provide either the ID of the test or your IP address. This is the only way to identify your data, without this information we won't be able to comply with your request.<br/><br/>
-        Contact this email address for all deletion requests: <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>.
+		现在没有任何手段删除数据!
     </p>
     <br/><br/>
     <div class="closePrivacyPolicy">
-        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">Close</a>
+        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">关闭</a>
     </div>
     <br/>
 </div>
